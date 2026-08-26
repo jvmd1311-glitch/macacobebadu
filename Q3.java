@@ -32,14 +32,33 @@ class Q3 {
       public static boolean inteiro(String string, int tam) {
 	for(int i=0; i<tam ; i++){
 		char c = string.charAt(i);
-		if(c >=0 && c <=9){
-			return true ;
+		
+		if (c < '0' || c > '9') {
+            return false;
+        }
+    }
+    return true; 
 	}
+     public static boolean real(String string, int tam) {
+    int pontos = 0;
 
+    for (int i = 0; i < tam; i++) {
+        char c = string.charAt(i);
 
-    public static void main(String[] args) {
+        if (c == '.' || c == ',') {
+            pontos++;
+        } else if (c < '0' || c > '9') {
+            return false;
+        }
+    }
+
+    return pontos <= 1;
+}
+
+        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String entrada = sc.nextLine();
+        while (!entrada.equals("FIM")) {
         int tam = entrada.length();
 	if(vogal(entrada,tam)){
 	System.out.print("SIM ");
@@ -53,6 +72,20 @@ class Q3 {
           if(!consoante(entrada,tam)){
                  System.out.print("NAO ");
           }
-
+	  if(inteiro(entrada,tam)){
+           System.out.print("SIM ");
+           }
+           if(!inteiro(entrada,tam)){
+                   System.out.print("NAO ");
+           }
+	    if(real(entrada,tam)){
+            System.out.print("SIM");
+            }
+            if(!real(entrada,tam)){
+            System.out.print("NAO");
+           }
+System.out.println("");
+entrada = sc.nextLine();
        	}
+}
 }
