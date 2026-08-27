@@ -58,7 +58,7 @@ class Q3 {
         public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String entrada = sc.nextLine();
-        while (!entrada.equals("FIM")) {
+        while (!(senha.length() == 3 && senha.charAt(0) == 'F' && senha.charAt(1) == 'I' && senha.charAt(2) == 'M')) {
         int tam = entrada.length();
 	if(vogal(entrada,tam)){
 	System.out.print("SIM ");
