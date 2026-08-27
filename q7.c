@@ -5,7 +5,7 @@ int substringMaior(char str[], int n) {
 
     for (int i = 0; i < n; i++) {
         int cont = 0;
-        int j = i;
+        int j = i + 1;
 
         while (j < n) {
             int k = i;
