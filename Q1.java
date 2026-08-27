@@ -7,7 +7,7 @@ class Q1 {
         String str1 = sc.nextLine();
         
         // Testa se a linha lida é "FIM"
-        while (!str1.equals("FIM")) {
+       while (!(senha.length() == 3 && senha.charAt(0) == 'F' && senha.charAt(1) == 'I' && senha.charAt(2) == 'M')) {
             String fstr = "";
             int n = str1.length(); // Pega o tamanho da String
             
