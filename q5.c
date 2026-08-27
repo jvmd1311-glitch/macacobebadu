@@ -1,13 +1,17 @@
-#include <stdio.h>
+#include  <stdio.h>
+
+int soma(int num){
+        int num;
+        int soma=0;
+        while(num!=0){
+            soma += num % 10;
+           num /= 10 ;
+        }
+    return soma;
+}
 int main(){
-    int soma=0;
-    int num;
-    int c,d,u;
-    while(scanf("%d", &num) !=EOF){
-c = num / 100;
-d = (num / 10) %10;
-u = num % 10;
-soma = c + d + u;
-printf("%d\n", soma);
-}
-}
+        int v;
+         while (scanf("%d", &v) != EOF) {
+        printf("%d\n", soma(v));
+    }
+        }

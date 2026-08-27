@@ -1,30 +1,49 @@
-#include <stdio.h> 
-void substring(char str[], int n){
-    int cont=0;
-    int temp, j;
-    for(int i=0; i<n-1; i++){
-        j= i+1;
-        while(str[i]!=str[j]){
-            cont++;
-            j++;
+#include <stdio.h>
+
+int substringMaior(char str[], int n) {
+    int maior = 0;
+
+    for (int i = 0; i < n; i++) {
+        int cont = 0;
+        int j = i;
+
+        while (j < n) {
+            int k = i;
+
+            while (k < j && str[k] != str[j]) {
+                k++;
+            }
+
+            if (k == j) {
+                cont++;
+                j++;
+            } else {
+                j = n;
+            }
         }
-        temp = cont;
-        if(cont>temp){
-            temp = cont;
+
+        if (cont > maior) {
+            maior = cont;
         }
-        cont = 0;
     }
-    printf("%d\n", temp);
+
+    return maior;
 }
-int main(){
+
+int main() {
     char str[100];
-    int tam=0;
+
     fgets(str, 100, stdin);
-     while(!(str[0]=='F' && str[1]=='I' && str[2]=='M' && str[3]=='\0')){
-        while(str[tam]!='\0'){
+
+    while (!(str[0] == 'F' && str[1] == 'I' && str[2] == 'M' && str[3] == '\0')) {
+        int tam = 0;
+
+        while (str[tam] != '\0') {
             tam++;
-        }    
-     substring(str,tam);
-     fgets(str, 100, stdin);
+        }
+
+        printf("%d\n", substringMaior(str, tam));
+
+        fgets(str, 100, stdin);
     }
 }
