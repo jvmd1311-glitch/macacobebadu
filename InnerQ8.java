@@ -35,7 +35,7 @@ class Q8{
         int tam;
         Scanner sc = new Scanner(System.in);
         String senha = sc.nextLine(); 
-        while (!senha.equals("FIM")) {
+      while (!(senha.length() == 3 && senha.charAt(0) == 'F' && senha.charAt(1) == 'I' && senha.charAt(2) == 'M')) {
             tam = senha.length();
 
             if (validar(senha, tam)) {
