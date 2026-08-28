@@ -29,7 +29,7 @@ int main(){
         }
     }
 
-    while (!(str[0] == 'F' && str[1] == 'I' && str[2] == 'M' && str[3] == '\0')) {
+    while (!(str[0] == 'F' && str[1] == 'I' && str[2] == 'M' && str[3] == '\n')) {
         cesar(str);
         printf("%s\n", str);
         fgets(str, 100, stdin);
