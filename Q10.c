@@ -7,6 +7,8 @@ int ehVogal(char c) {
     }
     return 0;
 }
+
+// verifica se a string tem somente vogais
     int vogalRec(char texto[], int i) {
         if (texto[i] == '\n' || texto[i] == '\0') {
             return 1;
@@ -22,14 +24,13 @@ int ehVogal(char c) {
         return vogalRec(texto, 0);
     }
 
+    // verifica se a string tem somente consoantes
     int consoanteRec(char texto[], int i) {
         if (texto[i] == '\n' || texto[i] == '\0') {
             return 1;
         }
 
         if (!ehVogal(texto[i]) &&((texto[i] >= 'a' && texto[i] <= 'z') || (texto[i] >= 'A' && texto[i] <= 'Z'))) {
-             
-            
             return consoanteRec(texto, i + 1);
         }
 
@@ -37,9 +38,11 @@ int ehVogal(char c) {
     }
 
     int consoante(char texto[]) {
+        // comeca pela primeira posicao
         return consoanteRec(texto, 0);
     }
 
+    // verifica se a string e um numero inteiro
     int inteiroRec(char texto[], int i) {
         if (texto[i] == '\n' || texto[i] == '\0') {
             return 1;
@@ -53,9 +56,11 @@ int ehVogal(char c) {
     }
 
     int inteiro(char texto[]) {
+        // comeca pela primeira posicao
         return inteiroRec(texto, 0);
     }
 
+    // verifica se a string e um numero real
     int realRec(char texto[], int i, int temPonto) {
         if (texto[i] == '\n' || texto[i] == '\0') {
             return 1;
@@ -66,7 +71,6 @@ int ehVogal(char c) {
         }
 
         if ((texto[i] == ',' || texto[i] == '.') && temPonto == 0 && i > 0 && texto[i + 1] >= '0' && texto[i + 1] <= '9') {
-            
             return realRec(texto, i + 1, 1);
         }
 
@@ -80,10 +84,10 @@ int ehVogal(char c) {
     int main() {
         char texto[1000];
 
+        // le as linhas ate encontrar FIM
         fgets(texto, 1000, stdin);
 
         while (!(texto[0] == 'F' && texto[1] == 'I' && texto[2] == 'M' && (texto[3] == '\n' || texto[3] == '\0'))) {
-             
             if (vogal(texto)) {
                 printf("SIM ");
             } else {
