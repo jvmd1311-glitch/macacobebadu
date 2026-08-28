@@ -33,9 +33,9 @@ int substringMaior(char str[], int n) {
 int main() {
     char str[100];
 
-    fgets(str, 100, stdin);
-
-    while (!(str[0] == 'F' && str[1] == 'I' && str[2] == 'M' && str[3] == '\0')) {
+        while (fgets(str, 100, stdin) != NULL &&
+                     !(str[0] == 'F' && str[1] == 'I' && str[2] == 'M' && str[3] == '\n' || str[3] == '\0')) {
+                        
         int tam = 0;
 
         while (str[tam] != '\0') {
@@ -44,6 +44,5 @@ int main() {
 
         printf("%d\n", substringMaior(str, tam));
 
-        fgets(str, 100, stdin);
     }
 }
