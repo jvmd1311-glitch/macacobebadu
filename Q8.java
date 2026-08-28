@@ -1,5 +1,5 @@
 import java.util.*;
-class InnerQ8{
+class Q8{
     // verifica o fim da entrada
     public static boolean isFim(String s) {
     return s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M';
@@ -45,7 +45,7 @@ class InnerQ8{
         String senha = sc.nextLine(); 
 
             // repete ate encontrar FIM
-      while (!(isFim(entrada))) {
+      while (!(isFim(senha))) {
             tam = senha.length();
 
             if (validar(senha, tam)) {
@@ -54,6 +54,7 @@ class InnerQ8{
                 System.out.println("NAO");
             }
 
+            senha = sc.nextLine();
         }
         
     }
