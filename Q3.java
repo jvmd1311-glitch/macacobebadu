@@ -1,7 +1,9 @@
 import java.util.*;
 
 class Q3 {
-
+public static boolean isFim(String s) {
+    return s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M';
+}
     public static boolean ehLetra(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
     }
@@ -58,7 +60,7 @@ class Q3 {
         public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String entrada = sc.nextLine();
-        while (!(senha.length() == 3 && senha.charAt(0) == 'F' && senha.charAt(1) == 'I' && senha.charAt(2) == 'M')) {
+        while (!(isFim(entrada))) {
         int tam = entrada.length();
 	if(vogal(entrada,tam)){
 	System.out.print("SIM ");
